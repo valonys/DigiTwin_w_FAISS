@@ -1,0 +1,7 @@
+streamlit>=1.27.0
+torch>=2.1.0
+transformers>=4.40.0
+huggingface_hub>=0.23.0
+accelerate>=0.27.0
+peft>=0.8.2
+scipy>=1.10.0
