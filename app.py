@@ -17,7 +17,7 @@ st.set_page_config(
 )
 
 # --- Display logo (placeholder) ---
-st.image("ValonyLabs_Logo.png", width=150)  # ⬅️ Replace with your actual logo path
+st.image("https://github.com/valonys/DigiTwin/blob/fb79c7598b23f408f716222508788ea7cb45ab77/ValonyLabs_Logo.png", width=150)  # ⬅️ Replace with your actual logo path
 st.title("🚀 DigiTwin - ValLabs 🚀")
 
 # Avatars
