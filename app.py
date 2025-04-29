@@ -7,7 +7,9 @@ from threading import Thread
 from transformers import AutoTokenizer, AutoModelForCausalLM, TextIteratorStreamer
 
 # --- Hugging Face Token ---
-HF_TOKEN = os.environ.get("HF_TOKEN")  # or hardcode "hf_xxxxxx"
+#HF_TOKEN = os.environ.get("HF_TOKEN")  # or hardcode "hf_xxxxxx"
+HF_TOKEN = st.secrets["HF_TOKEN"]
+
 
 # --- Streamlit page config ---
 st.set_page_config(
