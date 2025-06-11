@@ -19,8 +19,8 @@ st.set_page_config(
 )
 
 # --- Display logo (placeholder) ---
-st.image("https://github.com/valonys/DigiTwin/blob/fb79c7598b23f408f716222508788ea7cb45ab77/ValonyLabs_Logo.png", width=150)  # ⬅️ Replace with your actual logo path
-st.title("🚀 DigiTwin - ValLabs 🚀")
+st.image("https://github.com/valonys/DigiTwin/blob/1a115b5c6d62e12f9aa610e573c0a44688a897f1/ValonyLabs_Logo.png", width=150)  # ⬅️ Replace with your actual logo path
+st.title("🚀 DigiTwin - ValLabs 🚀") 
 
 # Avatars
 USER_AVATAR = "https://raw.githubusercontent.com/achilela/vila_fofoka_analysis/9904d9a0d445ab0488cf7395cb863cce7621d897/USER_AVATAR.png"
