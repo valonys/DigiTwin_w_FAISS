@@ -16,28 +16,49 @@ from cerebras.cloud.sdk import Cerebras
 load_dotenv()
 
 # --- UI CONFIG & STYLE ---
-st.set_page_config(page_title="DigiTwin RAG Forecast", layout="centered")
+st.set_page_config(page_title="DigiTwin RAG Forecast", layout="wide")
+
 st.markdown("""
     <style>
     @import url('https://fonts.cdnfonts.com/css/tw-cen-mt');
-    * { font-family: 'Tw Cen MT', sans-serif !important; }
+    * {
+        font-family: 'Tw Cen MT', sans-serif !important;
+    }
+
+    /* Sidebar arrow fix */
     section[data-testid="stSidebar"] [data-testid="stSidebarNav"]::before {
         content: "▶";
         font-size: 1.3rem;
         margin-right: 0.4rem;
     }
+
+    /* Top-right logo placement */
     .logo-container {
-        position: fixed;
-        top: 0.3rem;
-        right: 1rem;
-        z-index: 9999;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 999999;
+    }
+    
+    .logo-container img {
+        width: 100px !important;
+        height: auto;
+    }
+    
+    /* Ensure the main content doesn't overlap */
+    .main .block-container {
+        padding-top: 2rem;
     }
     </style>
 """, unsafe_allow_html=True)
+
+# Display logo (smaller, top-right)
 st.markdown(
-    '<div class="logo-container">'
-    '<img src="https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true" width="100">'
-    '</div>',
+    """
+    <div class="logo-container">
+        <img src="https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true">
+    </div>
+    """,
     unsafe_allow_html=True
 )
 st.title("📊 DigiTwin RAG Forecast App")
