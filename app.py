@@ -28,9 +28,9 @@ st.markdown("""
     }
     .logo-container {
         position: fixed;
-        top: 0.5rem;
+        top: 0.3rem;
         right: 1rem;
-        z-index: 10000;
+        z-index: 9999;
     }
     </style>
 """, unsafe_allow_html=True)
