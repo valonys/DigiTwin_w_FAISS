@@ -36,7 +36,7 @@ st.markdown("""
     .logo-container {
         position: fixed;
         top: 0.1rem;
-        right: 0.25rem;
+        right: 0.4rem;
         z-index: 9999;
     }
     </style>
@@ -46,7 +46,7 @@ st.markdown("""
 st.markdown(
     """
     <div class="logo-container">
-        <img src="https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true" width="30">
+        <img src="https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true" width="50">
     </div>
     """,
     unsafe_allow_html=True
