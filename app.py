@@ -27,7 +27,7 @@ st.markdown("""
         margin-right: 0.4rem;
     }
     .logo-container {
-        position: absolute;
+        position: fixed;
         top: 1rem;
         right: 1.5rem;
         z-index: 9999;
@@ -36,7 +36,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 st.markdown(
     '<div class="logo-container">'
-    '<img src="https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true" width="160">'
+    '<img src="https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true" width="100">'
     '</div>',
     unsafe_allow_html=True
 )
