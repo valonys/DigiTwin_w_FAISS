@@ -16,7 +16,7 @@ from cerebras.cloud.sdk import Cerebras
 load_dotenv()
 
 # --- UI CONFIG & STYLE ---
-st.set_page_config(page_title="DigiTwin RAG SQLite", layout="centered")
+st.set_page_config(page_title="DigiTwin RAG Forecast", layout="centered")
 st.markdown("""
     <style>
     @import url('https://fonts.cdnfonts.com/css/tw-cen-mt');
