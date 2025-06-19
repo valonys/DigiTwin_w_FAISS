@@ -15,8 +15,6 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import openai
 from cerebras.cloud.sdk import Cerebras
 
-# --- Load .env ---
-load_dotenv()
 
 # --- Page config and custom style ---
 st.set_page_config(page_title="DigiTwin RAG Forecast", layout="centered")
@@ -31,6 +29,10 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+# --- Load .env ---
+load_dotenv()
+
+
 
 # --- Sidebar branding ---
 st.sidebar.image("https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true", width=200)
