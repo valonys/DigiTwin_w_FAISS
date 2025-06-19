@@ -36,7 +36,7 @@ st.markdown("""
     .logo-container {
         position: fixed;
         top: 0.1rem;
-        right: 4rem;
+        right: 15rem;
         z-index: 9999;
     }
     </style>
