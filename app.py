@@ -34,20 +34,10 @@ st.markdown("""
 
     /* Top-right logo placement */
     .logo-container {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 999999;
-    }
-    
-    .logo-container img {
-        width: 100px !important;
-        height: auto;
-    }
-    
-    /* Ensure the main content doesn't overlap */
-    .main .block-container {
-        padding-top: 2rem;
+        position: fixed;
+        top: 0.1rem;
+        right: 0.4rem;
+        z-index: 9999;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -56,11 +46,12 @@ st.markdown("""
 st.markdown(
     """
     <div class="logo-container">
-        <img src="https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true">
+        <img src="https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true" width="50">
     </div>
     """,
     unsafe_allow_html=True
 )
+
 st.title("📊 DigiTwin RAG Forecast App")
 
 # --- AVATARS ---
