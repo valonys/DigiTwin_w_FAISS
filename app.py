@@ -46,7 +46,7 @@ st.markdown("""
 st.markdown(
     """
     <div class="logo-container">
-        <img src="https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true" width="10">
+        <img src="https://github.com/valonys/DigiTwin/blob/29dd50da95bec35a5abdca4bdda1967f0e5efff6/ValonyLabs_Logo.png?raw=true" width="30">
     </div>
     """,
     unsafe_allow_html=True
