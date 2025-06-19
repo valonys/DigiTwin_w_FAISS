@@ -16,7 +16,7 @@ from cerebras.cloud.sdk import Cerebras
 load_dotenv()
 
 # --- UI CONFIG & STYLE ---
-st.set_page_config(page_title="Twin RAG Forecast", layout="centered")
+st.set_page_config(page_title="DigiTwin RAG Forecast", layout="centered")
 st.markdown("""
     <style>
     @import url('https://fonts.cdnfonts.com/css/tw-cen-mt');
@@ -40,7 +40,7 @@ st.markdown(
     '</div>',
     unsafe_allow_html=True
 )
-st.title("📊 DigiTwin SQLite ")
+st.title("📊 DigiTwin RAG Forecast App")
 
 # --- AVATARS ---
 USER_AVATAR = "https://raw.githubusercontent.com/achilela/vila_fofoka_analysis/9904d9a0d445ab0488cf7395cb863cce7621d897/USER_AVATAR.png"
