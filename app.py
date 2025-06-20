@@ -78,7 +78,7 @@ with st.sidebar:
         "EE Smartest Agent", "JI Divine Agent", "EdJa-Valonys", "XAI Inspector", "Valonys Llama"
     ])
     uploaded_files = st.file_uploader("📄 Upload up to 10 PDF reports", type=["pdf"], accept_multiple_files=True)
-    prompt_type = st.selectbox("Choose Prompt Type", list(PROMPTS.keys()))
+    prompt_type = st.selectbox("Select the Task Type to Perform", list(PROMPTS.keys()))
 
 # --- PDF PARSING ---
 def parse_pdf(file):
