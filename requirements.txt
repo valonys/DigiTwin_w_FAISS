@@ -5,7 +5,7 @@ python-dotenv
 PyPDF2
 python-docx
 openai
-cerebras-cloud-sdk
+cerebras_cloud_sdk
 langchain
 langchain-community
 langchain-text-splitters
