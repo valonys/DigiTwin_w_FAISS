@@ -11,6 +11,7 @@ from langchain.schema import Document as LCDocument
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import openai
 from cerebras.cloud.sdk import Cerebras
+from vector_store import VectorStore
 
 # Load environment
 load_dotenv()
@@ -77,7 +78,14 @@ with st.sidebar:
     model_alias = st.selectbox("Choose your AI Agent", [
         "EE Smartest Agent", "JI Divine Agent", "EdJa-Valonys", "XAI Inspector", "Valonys Llama"
     ])
-    uploaded_files = st.file_uploader("📄 Upload up to 10 PDF reports", type=["pdf"], accept_multiple_files=True)
+    
+    file_type = st.radio("Select file type", ["PDF", "Excel"])
+    
+    if file_type == "PDF":
+        uploaded_files = st.file_uploader("📄 Upload up to 10 PDF reports", type=["pdf"], accept_multiple_files=True)
+    else:  # Excel
+        uploaded_files = st.file_uploader("📊 Upload Excel file with Global Notifications", type=["xlsx", "xls"], accept_multiple_files=False)
+    
     prompt_type = st.selectbox("Select the Task Type to Perform", list(PROMPTS.keys()))
 
 # --- PDF PARSING ---
@@ -96,9 +104,34 @@ def build_faiss_vectorstore(_docs):
     return FAISS.from_documents(chunks, embeddings)
 
 if uploaded_files:
-    parsed_docs = [LCDocument(page_content=parse_pdf(f), metadata={"name": f.name}) for f in uploaded_files]
-    st.session_state.vectorstore = build_faiss_vectorstore(parsed_docs)
-    st.sidebar.success(f"{len(parsed_docs)} reports indexed.")
+    if file_type == "PDF":
+        parsed_docs = [LCDocument(page_content=parse_pdf(f), metadata={"name": f.name}) for f in uploaded_files]
+        st.session_state.vectorstore = build_faiss_vectorstore(parsed_docs)
+        st.sidebar.success(f"{len(parsed_docs)} reports indexed.")
+    else:  # Excel
+        # Save the uploaded file to a temporary location
+        temp_file_path = os.path.join(os.getcwd(), "temp_excel_file.xlsx")
+        with open(temp_file_path, "wb") as f:
+            f.write(uploaded_files.getbuffer())
+        
+        try:
+            # Process the Excel file
+            vector_store = VectorStore()
+            excel_docs = vector_store.process_excel_to_documents(temp_file_path)
+            
+            if excel_docs:
+                # Create vectorstore from the Excel data
+                st.session_state.vectorstore = vector_store.process_documents(excel_docs)
+                st.sidebar.success(f"{len(excel_docs)} notifications indexed from Excel.")
+            else:
+                st.sidebar.error("No valid data found in the Excel file.")
+                
+        except Exception as e:
+            st.sidebar.error(f"Error processing Excel file: {str(e)}")
+            
+        # Clean up the temporary file
+        if os.path.exists(temp_file_path):
+            os.remove(temp_file_path)
 
 # --- RESPONSE LOGIC ---
 def generate_response(prompt):

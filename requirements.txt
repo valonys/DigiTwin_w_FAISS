@@ -5,13 +5,14 @@ python-docx>=0.8.11
 #pandas>=2.0.0
 openai>=1.0.0
 cerebras-cloud-sdk>=1.0.0
-langchain
-langchain-community
-openpyxl
+langchain>=0.1.0
+langchain-community>=0.0.13
+langchain-text-splitters>=0.0.1
+openpyxl>=3.1.2
 streamlit==1.36.0 #streamlit
 requests==2.31.0
 python-dotenv==1.0.0
-PyPDF2
+PyPDF2>=3.0.0
 pypdf #==3.0.1
 pandas==2.1.4
 transformers==4.38.2
@@ -20,6 +21,7 @@ accelerate==0.27.2
 sentencepiece==0.2.0
 #bitsandbytes==0.42.0
 huggingface-hub==0.20.3
-sentence-transformers
-faiss-cpu
+sentence-transformers>=2.2.2
+faiss-cpu>=1.7.4
+tiktoken>=0.5.1
 
